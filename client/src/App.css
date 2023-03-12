@@ -1,0 +1,16 @@
+*{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+body {
+    opacity: 0;
+    animation: fadeIn ease-in-out .4s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
