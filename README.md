@@ -1,6 +1,7 @@
 # Template for a React + Flask Web Application
 Simple template for creating web applications with a React frontend and Flask API Backend.
 Will be updating periodically.
+Template utilizes (ChakraUI)[https://chakra-ui.com/]
 ## Installation
 
 ### Frontend

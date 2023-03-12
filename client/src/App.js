@@ -13,8 +13,9 @@ import { ChakraProvider, Container } from '@chakra-ui/react'
 function App() {
 
   const [data, setData] = useState([{}]);
-
-  useEffect(() => {
+  
+  /*useEffect fetching json message from the backend*/
+  useEffect(() => {       
     fetch("/greeting").then(
       res => res.json()
     ).then(
@@ -25,13 +26,13 @@ function App() {
     )
   }, [])
   return (
-    <ChakraProvider>
+    <ChakraProvider> {/*Neccesary for ChakraUI elements to work. To not use ChakraUI replace <ChakraProvider></ChakraProvider> with <></>*/}
       <Navbar />
       <Container maxW='1000px' p='20px' mb='10px'centerContent>
         <Router>
-          <Routes>
-            <Route path="*" element={<NotFound />} />
-            <Route path="/" element={<HomePage />} />
+          <Routes> {/*Add routes for new pages here | See ./pages */}
+            <Route path="*" element={<NotFound />} /> {/*Wildcard Path, any URL that isn't defined in another route will land here*/}
+            <Route path="/" element={<HomePage />} /> 
           </Routes>
         </Router>
       </Container>

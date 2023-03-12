@@ -5,14 +5,14 @@ import HeaderDiv from '../components/HeaderDiv';
 import { Heading, Text } from '@chakra-ui/react'
 
 
+function HomePage() { 
 
-function HomePage() {
+    /*Contents of Homepage*/
   return (
     <>
-    <Heading>Hi</Heading>
-    bruh
+    <Heading>Home</Heading>
     </>
   );
 }
 
-export default HomePage
+export default HomePage /*Allows HomePage to be imported into App.js*/
