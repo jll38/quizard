@@ -56,7 +56,7 @@ import {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Template
+            Quizard
           </Text>
         </Flex>
 
@@ -95,10 +95,10 @@ import {
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
-            bg={'blue.400'}
+            bg={'purple.500'}
             href={'/'}
             _hover={{
-              bg: 'blue.300',
+              bg: 'purple.300',
             }}>
             Sign Up
           </Button>

@@ -2,7 +2,15 @@ import 'antd/dist/reset.css';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 import HeaderDiv from '../components/HeaderDiv';
-import { Heading, Text } from '@chakra-ui/react'
+import {  Button,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+  useBreakpointValue, 
+  Box,
+  Divider} from '@chakra-ui/react'
 
 
 function HomePage() { 
@@ -10,7 +18,68 @@ function HomePage() {
     /*Contents of Homepage*/
   return (
     <>
-    <Heading>Home</Heading>
+    <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
+      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+        <Stack spacing={6} w={'full'} maxW={'lg'}>
+          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                height: useBreakpointValue({ base: '20%', md: '30%' }),
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'purple.400',
+                zIndex: -1,
+              }}>
+              Quizard
+            </Text>
+            <br />{' '}
+            <Text color={'purple.400'} as={'span'}>
+            Create, Share, and Challenge: 
+            </Text>{' '}
+          </Heading>
+          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+          The Interactive Quiz Hub for Friends and Fun
+          </Text>
+          <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
+            <Button
+              rounded={'full'}
+              bg={'purple.400'}
+              color={'white'}
+              _hover={{
+                bg: 'purple.500',
+              }}>
+              Create a Quiz
+            </Button>
+            <Button rounded={'full'}>Browse Quizzes</Button>
+          </Stack>
+        </Stack>
+      </Flex>
+      <Flex flex={1}>
+        <Image
+          alt={'quizard logo'}
+          objectFit={'cover'}
+          src=
+            'static\images\quizard-2.png'
+          borderRadius='20px'
+          boxShadow='2px 4px 10px -2px rgba(0, 0, 0)'
+        />
+      </Flex>
+    </Stack>
+    <Box minH='10vh'>
+    </Box>
+    <Divider orientation='horizontal' w='100%'/>
+    <Box minH='10vh'>
+    </Box>
+    <Stack minH={'50vh'} direction={{ base: 'column', md: 'row' }}>
+      <Heading fontSize={{ base: '3xl', md: '3xl', lg: '4xl' }}>Hottest Quizzes</Heading>
+      <Stack spacing={8} direction='row'>
+      </Stack>
+    </Stack>
     </>
   );
 }
