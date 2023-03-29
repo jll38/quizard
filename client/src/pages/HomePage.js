@@ -57,7 +57,11 @@ function HomePage() {
               }}>
               Create a Quiz
             </Button>
-            <Button rounded={'full'}>Browse Quizzes</Button>
+            <Button 
+            as={'a'}
+            rounded={'full'}
+            href={'/quizzes'}
+            >Browse Quizzes</Button>
           </Stack>
         </Stack>
       </Flex>

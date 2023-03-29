@@ -86,7 +86,7 @@ import {
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'/'}>
+            href={'/quizzes'}>
             Browse
           </Button>
           <Button

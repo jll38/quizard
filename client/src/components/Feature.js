@@ -18,6 +18,7 @@ export default function Feature({title, description, id}) {
         <>
         <Box 
         maxW='300px' 
+        height='440px'
         borderWidth='1px' 
         borderRadius='lg' 
         overflow='hidden'>
