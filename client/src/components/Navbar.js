@@ -87,7 +87,7 @@ import {
             fontWeight={400}
             variant={'link'}
             href={'/'}>
-            Sign In
+            Browse
           </Button>
           <Button
             as={'a'}
@@ -100,7 +100,7 @@ import {
             _hover={{
               bg: 'purple.300',
             }}>
-            Sign Up
+            Create
           </Button>
         </Stack>
       </Flex>

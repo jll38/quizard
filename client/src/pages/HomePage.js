@@ -2,11 +2,13 @@ import 'antd/dist/reset.css';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 import HeaderDiv from '../components/HeaderDiv';
+import Feature from '../components/Feature';
 import {  Button,
   Flex,
   Heading,
   Image,
   Stack,
+  VStack,
   Text,
   useBreakpointValue, 
   Box,
@@ -75,11 +77,16 @@ function HomePage() {
     <Divider orientation='horizontal' w='100%'/>
     <Box minH='10vh'>
     </Box>
-    <Stack minH={'50vh'} direction={{ base: 'column', md: 'row' }}>
-      <Heading fontSize={{ base: '3xl', md: '3xl', lg: '4xl' }}>Hottest Quizzes</Heading>
-      <Stack spacing={8} direction='row'>
-      </Stack>
-    </Stack>
+    <VStack minH={'50vh'} spacing={{ base: 4, md: 6 }}>
+  <Heading fontSize={{ base: '3xl', md: '3xl', lg: '4xl' }}>Hottest Quizzes</Heading>
+  <Stack spacing={8} direction={{ base: 'column', md: 'row' }}>
+    <Feature title='HTML Quiz'></Feature>
+    <Feature title='IS247 Quiz'></Feature>
+    <Feature title='HTML Quiz'></Feature>
+    <Feature title='IS247 Quiz'></Feature>
+  </Stack>
+</VStack>
+
     </>
   );
 }
