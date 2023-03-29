@@ -1,7 +1,8 @@
 import 'antd/dist/reset.css';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
-import Feature from '../components/Feature';
+import BrowseCard from '../components/BrowseCard';
+import ScaleOnHover from '../components/ScaleOnHover';
 
 import {  Button,
   Flex,
@@ -18,16 +19,17 @@ import {  Button,
   Grid,} from '@chakra-ui/react'
 
 
+
 function Browse() { 
 
     /*Contents of Homepage*/
   return (
     <>
-    <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
+    <Stack direction={{ base: 'column', md: 'row' }} maxH='700px'>
       <Flex p={10} flex={1} align={'center'} justify={'center'}>
         Text
       </Flex>
-      <Flex flex={4} borderRight='1px' overflowY='scroll'>
+      <Flex flex={13} borderLeft='1px' overflowY='scroll' p={'40px'}>
       <Grid
       templateColumns={{
         base: 'repeat(1, 1fr)',
@@ -37,14 +39,87 @@ function Browse() {
       }}
       gap={4}
     >
-        <Feature title='Test' />
-        <Feature title='Test' />
-        <Feature title='Test' />
-        <Feature title='Test' />
-        <Feature title='Test' />
-        <Feature title='Test' />
-        <Feature title='Test' />
-        <Feature title='Test' />
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+       <ScaleOnHover>
+        <BrowseCard text='HTML Quiz'/>
+       </ScaleOnHover>
+
+       
+
         
     </Grid>
       </Flex>
