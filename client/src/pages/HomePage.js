@@ -3,6 +3,8 @@ import '../App.css';
 import React, { useState, useEffect } from 'react';
 import HeaderDiv from '../components/HeaderDiv';
 import Feature from '../components/Feature';
+import { useSpring, animated } from 'react-spring';
+
 import {  Button,
   Flex,
   Heading,
@@ -16,7 +18,10 @@ import {  Button,
 
 
 function HomePage() { 
-
+  const springs = useSpring({
+    from: { x: 0 },
+    to: { x: 100 },
+  })
     /*Contents of Homepage*/
   return (
     <>
@@ -41,7 +46,7 @@ function HomePage() {
             </Text>
             <br />{' '}
             <Text color={'purple.400'} as={'span'}>
-            Create, Share, and Challenge: 
+            Create, Share, and Challenge 
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>

@@ -78,7 +78,7 @@ import {
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'/'}>
+            href={'/about'}>
             About
           </Button>
           <Button
@@ -96,7 +96,7 @@ import {
             fontWeight={600}
             color={'white'}
             bg={'purple.500'}
-            href={'/'}
+            href={'/create'}
             _hover={{
               bg: 'purple.300',
             }}>

@@ -2,6 +2,8 @@ import 'antd/dist/reset.css';
 import './App.css';
 import NotFound from './pages/NotFound';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/About';
+import CreatePage from './pages/Create';
 import Browse from './pages/Browse';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -35,6 +37,8 @@ function App() {
             <Route path="*" element={<NotFound />} /> {/*Wildcard Path, any URL that isn't defined in another route will land here*/}
             <Route path="/" element={<HomePage />} />
             <Route path="/quizzes" element={<Browse />} /> 
+            <Route path="/create" element={<CreatePage />} /> 
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </Router>
       </Container>

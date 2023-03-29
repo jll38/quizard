@@ -16,7 +16,8 @@ import {  Button,
   Divider,
   Input,
   HStack,
-  Grid,} from '@chakra-ui/react'
+  Grid,
+  Container,} from '@chakra-ui/react'
 
 
 
@@ -27,7 +28,9 @@ function Browse() {
     <>
     <Stack direction={{ base: 'column', md: 'row' }} maxH='700px'>
       <Flex p={10} flex={1} align={'center'} justify={'center'}>
-        Text
+        <Container top={0} left={0} position='relative'>
+          <Text color={'gray.600'}>Filters</Text>
+        </Container>
       </Flex>
       <Flex flex={13} borderLeft='1px' overflowY='scroll' p={'40px'}>
       <Grid
