@@ -26,7 +26,7 @@ function Browse() {
     /*Contents of Homepage*/
   return (
     <>
-    <Stack direction={{ base: 'column', md: 'row' }} maxH='700px'>
+    <Stack minH='85vh' direction={{ base: 'column', md: 'row' }} maxH='700px'>
       <Flex p={10} flex={1} align={'center'} justify={'center'}>
         <Container top={0} left={0} position='relative'>
           <Text color={'gray.600'}>Filters</Text>
@@ -120,14 +120,9 @@ function Browse() {
        <ScaleOnHover>
         <BrowseCard text='HTML Quiz'/>
        </ScaleOnHover>
-
-       
-
-        
     </Grid>
       </Flex>
     </Stack>
-
     </>
   );
 }
