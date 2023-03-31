@@ -6,15 +6,10 @@ import {
     IconButton,
     Button,
     Stack,
-    Collapse,
-    Icon,
-    Link,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
+    Image, LinkOverlay, LinkBox
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -52,12 +47,7 @@ import {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Quizard
-          </Text>
+          <LinkBox><LinkOverlay as={'a'} href={'/'} w={'150px'}><Image src="../static/images/quizard-logo.png" w='150px' ></Image></LinkOverlay></LinkBox>
         </Flex>
 
         <Stack
