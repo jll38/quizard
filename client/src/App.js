@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/About';
 import CreatePage from './pages/Create';
 import QuizDetails from './pages/create-steps/quizDetails';
+import Publish from './pages/create-steps/Publish';
 import Browse from './pages/Browse';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -40,6 +41,7 @@ function App() {
             <Route path="/quizzes" element={<Browse />} /> 
             <Route path="/create" element={<CreatePage />} />
             <Route path="/create/details" element={<QuizDetails />} /> 
+            <Route path="/create/publish" element={<Publish/>} /> 
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </Router>
