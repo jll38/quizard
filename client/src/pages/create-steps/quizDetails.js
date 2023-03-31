@@ -40,10 +40,12 @@ function QuizDetails() {
         }
         return questions;
       };
-
+    
+      const publish = () => {
+        
+      };
     return (
         <>
-            <Text>{numQ}</Text>
             <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
                 <Flex p={8} align={'center'} justify={'center'}>
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
