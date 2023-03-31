@@ -53,7 +53,7 @@ function CreatePage() {
                             <Input placeholder='John Doe' id='q-2'></Input>
                             <FormLabel for='q-3'>Thumbnail</FormLabel>
                             <Input border='none' type='file' id='q-3'></Input>
-                            <Button variant='outline' colorScheme='purple' onClick={handleCreateQuiz}>Next</Button>
+                            <Button colorScheme='purple' onClick={handleCreateQuiz}>Next</Button>
                         </FormControl>
                     </Stack>
                 </Flex>
