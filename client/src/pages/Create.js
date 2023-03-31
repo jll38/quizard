@@ -48,9 +48,9 @@ function CreatePage() {
                         </Heading>
                         <FormControl>
                             <FormLabel for='q-1'>Quiz Name</FormLabel>
-                            <Input placeholder='HTML Quiz' id='q-1'></Input>
+                            <Input placeholder='HTML Quiz' id='q-1' autoComplete='off'></Input>
                             <FormLabel for='q-2'>Author</FormLabel>
-                            <Input placeholder='John Doe' id='q-2'></Input>
+                            <Input placeholder='John Doe' id='q-2' autoComplete='off'></Input>
                             <FormLabel for='q-3'>Thumbnail</FormLabel>
                             <Input border='none' type='file' id='q-3'></Input>
                             <Button colorScheme='purple' onClick={handleCreateQuiz}>Next</Button>

@@ -3,7 +3,14 @@ import { Box, Text, Image } from '@chakra-ui/react';
 
 const BrowseCard = ({ id, text }) => {
   return (
-    <Box position="relative" w="200px" maxH="150px" borderRadius="15px" overflow="hidden">
+    <Box 
+    position="relative" 
+    w="200px" 
+    maxH="150px" 
+    borderRadius="15px" 
+    overflow="hidden"
+    as={'button'}
+    >
       <Image
         src="../static/images/quizard.png"
         alt="Background"

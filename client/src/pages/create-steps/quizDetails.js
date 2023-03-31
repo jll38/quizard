@@ -16,7 +16,8 @@ import {
     Divider,
     Input,
     FormControl,
-    FormLabel
+    FormLabel,
+    HStack
 } from '@chakra-ui/react'
 import { Form } from 'react-router-dom';
 
@@ -32,6 +33,10 @@ function QuizDetails() {
     const addNewQuestion = () => {
         setNumQ(numQ+ 1);
       };
+    
+    const removeQuestion = () => {
+        setNumQ(numQ-1);
+    };
 
     const renderQuestions = () => {
         const questions = [];
@@ -42,7 +47,8 @@ function QuizDetails() {
       };
     
       const publish = () => {
-        
+        /*TODO: Add Questions & to Session Storage*/
+        window.location.assign('/create/publish');
       };
     return (
         <>
@@ -58,8 +64,11 @@ function QuizDetails() {
                             <br />{' '}
                         </Heading>
                         {renderQuestions()}
-                        <Button variant='outline' colorScheme='purple' w='10%' onClick={addNewQuestion}>+</Button>
-                        <Button colorScheme='purple'>Next</Button>
+                        <HStack>
+                            <Button variant='outline' colorScheme='purple' w='10%' onClick={addNewQuestion}>+</Button>
+                            <Button variant='outline' colorScheme='purple' w='10%' onClick={removeQuestion}>-</Button>
+                        </HStack>
+                        <Button colorScheme='purple' onClick={publish}>Next</Button>
                     </Stack>
                 </Flex>
             </Stack>

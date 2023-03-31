@@ -15,26 +15,37 @@ export default function AddQuestionDetails({num})
 
         }
     }
+    const subOptions = () => {
+        if(nOptions > 0)
+        {
+            setNumOptions(nOptions - 1);
+        } else{
+
+        }
+    }
     const RenderOptions = () => {
         const options = [];
         for (let i = 0; i < nOptions; i++) {
-          options.push(<Input key={i} id={num+'-o-'+(i+2)}></Input>);
+          options.push(<Input key={i} id={num+'-o-'+(i+2)} autoComplete='off'></Input>);
         }
         return options;
     }
     return(
         <FormControl>
             <FormLabel>Question {num + 1}</FormLabel>
-            <Input id={num + '-q-1'}></Input>
+            <Input id={num + '-q-1'} autoComplete='off'></Input>
             <FormLabel>Answer</FormLabel>
-            <Input id='answer'></Input>
+            <Input id='answer' autoComplete='off'></Input>
             <FormLabel>Other Option(s)</FormLabel>
-            <Input id={num+'-o-1'}></Input>
+            <Input id={num+'-o-1'} autoComplete='off'></Input>
             {RenderOptions()}
-            <Button onClick={() => {
+            <Button variant={'outline'} onClick={() => {
                 addOptions();
             }}>Add Option</Button>
-            <Divider mt='20px' orientation='horizontal'></Divider>
+            <Button variant={'outline'} float={'right'} onClick={() => {
+                subOptions();
+            }}>Remove Option</Button>
+            <Divider mt='25px' orientation='horizontal'></Divider>
         </FormControl>
     );
 }
