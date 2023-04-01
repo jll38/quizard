@@ -21,6 +21,9 @@ import { Form } from 'react-router-dom';
 
 
 function CreatePage() {
+    useEffect(() => {
+        sessionStorage.clear();
+    }, []);
     function handleCreateQuiz(event) {
         console.log('handleCreateQuiz called')
         const quizName = document.getElementById('q-1').value;

@@ -25,18 +25,11 @@ import { Form } from 'react-router-dom';
 function QuizDetails() {
     const [numQ, setNumQ] = useState(1);
     useEffect(() => {
-        if (badSession) {
+        if (sessionStorage.getItem("quizName") == null || sessionStorage.getItem("author") == null) {
             window.location.assign('/create');
         }
     }, []);
     
-    const badSession = () => {
-        if (sessionStorage.getItem("quizName") === null || sessionStorage.getItem("author") === null || sessionStorage.getItem("thumbnail") === null)
-        {
-            return true;
-        }
-        return false;
-    }
     
     const addNewQuestion = () => {
         setNumQ(numQ+ 1);
