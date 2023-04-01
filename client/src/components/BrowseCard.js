@@ -2,6 +2,9 @@ import React from 'react';
 import { Box, Text, Image } from '@chakra-ui/react';
 
 const BrowseCard = ({ id, text }) => {
+  const handleMouseDownImage = (event) => {
+    event.preventDefault();
+  };
   return (
     <Box 
     position="relative" 
@@ -17,6 +20,7 @@ const BrowseCard = ({ id, text }) => {
         width="100%"
         height="100%"
         objectFit="cover"
+        onMouseDown={handleMouseDownImage}
       />
       <Box
         position="absolute"

@@ -16,7 +16,10 @@ import {  Button,
   Divider} from '@chakra-ui/react'
 import BrowseCard from '../../components/BrowseCard';
 function Publish() { 
-
+  const handlePublish = () => {
+    console.log('handlePublish() called');
+    sessionStorage.clear();
+  }
   return (
     <>
     <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
@@ -31,7 +34,12 @@ function Publish() {
                 color: 'purple.500',
                 transition: 'color 0.3s ease-in-out'
               }}
-              transition="color 0.3s ease-in-out">
+              transition="color 0.3s ease-in-out"
+              border={'2px'}
+              padding={'10px'}
+              borderColor={'purple.600'}
+              borderRadius={'10px'}
+              onClick={handlePublish}>
               Publish
             </Text>
             <br />{' '}
