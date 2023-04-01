@@ -20,6 +20,7 @@ Quizard is a web application that allows users to create custom quizzes, share t
 - React Router: Declarative routing for React applications.
 - ChakraUI: A modular and accessible component library for React.
 - Python Flask: A lightweight web framework for Python, used to build the backend API.
+- Playwright: A JavaScript framework for Web Testing and Automation.
 
 ## Installation
 To set up the project locally, follow these steps:
