@@ -21,6 +21,11 @@ jobs:
       run: |
         cd client
         npx playwright install --with-deps
+    - name: Start application
+      run: |
+        cd client
+        npm start &
+        sleep 10
     - name: Run Playwright tests
       run: |
         cd client
