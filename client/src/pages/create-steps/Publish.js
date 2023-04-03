@@ -15,10 +15,15 @@ import {  Button,
   Box,
   Divider} from '@chakra-ui/react'
 import BrowseCard from '../../components/BrowseCard';
+
 function Publish() { 
+
+  //Sends quiz information to server, which will handle the database changes.
   const handlePublish = () => {
     console.log('handlePublish() called');
+    /*Fetch Request to server POST*/
     sessionStorage.clear();
+    /*Redirect to page for quiz*/
   }
   return (
     <>
@@ -59,4 +64,4 @@ function Publish() {
   );
 }
 
-export default Publish /*Allows HomePage to be imported into App.js*/
+export default Publish

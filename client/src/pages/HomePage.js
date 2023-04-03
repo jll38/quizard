@@ -22,7 +22,7 @@ function HomePage() {
     from: { x: 0 },
     to: { x: 100 },
   })
-    /*Contents of Homepage*/
+
   return (
     <>
     <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
@@ -100,4 +100,4 @@ function HomePage() {
   );
 }
 
-export default HomePage /*Allows HomePage to be imported into App.js*/
+export default HomePage 

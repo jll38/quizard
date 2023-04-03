@@ -24,21 +24,25 @@ import { Form } from 'react-router-dom';
 
 function QuizDetails() {
     const [numQ, setNumQ] = useState(1);
+    
+    //Redirects user to the Create Page if they have not begun creating the quiz yet (missing quizName and author values)
     useEffect(() => {
         if (sessionStorage.getItem("quizName") == null || sessionStorage.getItem("author") == null) {
             window.location.assign('/create');
         }
     }, []);
     
-    
+    //Adds question field to the array of questions, which gets rendered to the page
     const addNewQuestion = () => {
         setNumQ(numQ+ 1);
       };
     
+    //Removes question field from the array of questions, which gets rendered to the page
     const removeQuestion = () => {
         setNumQ(numQ-1);
     };
 
+    //Renders array of questions to the page
     const renderQuestions = () => {
         const questions = [];
         for (let i = 0; i < numQ; i++) {
@@ -47,7 +51,8 @@ function QuizDetails() {
         return questions;
       };
     
-      const publish = () => {
+    //Saves questions and options to session storage, and redirects user to the publish page
+    const publish = () => {
         /*TODO: Add Questions & to Session Storage*/
         window.location.assign('/create/publish');
       };

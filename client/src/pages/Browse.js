@@ -23,7 +23,7 @@ import {  Button,
 
 function Browse() { 
 
-    /*Contents of Homepage*/
+  /*Fetch request to server for quiz info from database*/
   return (
     <>
     <Stack minH='85vh' direction={{ base: 'column', md: 'row' }} maxH='700px'>
