@@ -18,5 +18,9 @@ with open("db/SQL Scripts/create_tables.sql") as f:
 def default():
     return {"message" : "Hello from the server!"}
 
+@app.route("/publish", methods=["POST"])
+def publishQuiz():
+    return {"message" : "Publish Called!"}
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

@@ -1,12 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 import { Box, Text, Image, FormControl, Input, FormLabel,Button, Divider } from '@chakra-ui/react';
 import { Form } from 'react-router-dom';
 
 export default function AddQuestionDetails({num})
 {   
     const [nOptions, setNumOptions] = useState(0);
-
+    
     const addOptions = () => {
         if(nOptions < 2)
         {

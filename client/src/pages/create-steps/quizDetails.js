@@ -1,5 +1,5 @@
 import 'antd/dist/reset.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import AddQuestionDetails from '../../components/AddQuestionDetails';
 
@@ -26,19 +26,19 @@ import { Form } from 'react-router-dom';
 function QuizDetails() {
     const [numQ, setNumQ] = useState(1);
     const [errors, setErrors] = useState([])
-    //Validates all the required fields
-    const validate = () => {
-        var regex = /^[a-zA-Z ]{2,30}$/;
-        let question;
+    
+    const getQuizDetails = () => {
+        const questions = [];
+        const answers = [];
+        const options = [];
         for(let i = 0; i < numQ; i++) {
-            question = document.getElementById(`${i}-q-1`)
-            if(question == null) 
-            {
-                setErrors(prevArray => [...prevArray, `Please enter Question #${i}`]);
-            } else if(!regex.test(question)){
-                setErrors(prevArray => [...prevArray, `Please enter valid value for Question #${i}`]);
-            }
+            questions.push(document.getElementById(`${i}-q-1`).value);
         }
+        /*Todo: Populate answers and options*/
+        console.log(questions);
+        sessionStorage.setItem('questions', questions);
+        sessionStorage.setItem('answers', answers);
+        sessionStorage.setItem('options', options);
     }
     //Redirects user to the Create Page if they have not begun creating the quiz yet (missing quizName and author values)
     useEffect(() => {
@@ -68,7 +68,7 @@ function QuizDetails() {
     
     //Saves questions and options to session storage, and redirects user to the publish page
     const publish = () => {
-        /*TODO: Add Questions & to Session Storage*/
+        getQuizDetails();
         window.location.assign('/create/publish');
         
       };
