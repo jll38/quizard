@@ -62,17 +62,19 @@ function CreatePage() {
         const thumbnail = document.getElementById('q-3').files[0];
 
         console.log(`Quiz Information: Quiz Name: ${quizName}, author ${author}, thumbnail: ${thumbnail}`);
-        window.sessionStorage.setItem('quizName', quizName);
-        window.sessionStorage.setItem('author', author);
-        window.sessionStorage.setItem('thumbnail', thumbnail);
-        const validName = validateName(document.getElementById('q-1').value)
-        const validAuthor = validateAuthor(document.getElementById('q-2').value)
+        
+        const validName = validateName(quizName)
+        const validAuthor = validateAuthor(author)
         if( validName && validAuthor)
         {
-            
+            window.sessionStorage.setItem('quizName', quizName);
+            window.sessionStorage.setItem('author', author);
+            window.sessionStorage.setItem('thumbnail', thumbnail);
             window.location.assign('/create/details');
         }
-        else{console.log(validateError)}
+        else{
+            console.log(validateError)
+        }
         
     }
     return (
@@ -89,9 +91,9 @@ function CreatePage() {
                             <br />{' '}
                         </Heading>
                         <FormControl isRequired>
-                            <FormLabel for='q-1'>Quiz Name</FormLabel>
+                            <FormLabel htmlFor='q-1'>Quiz Name</FormLabel>
                             <Input placeholder='HTML Quiz' id='q-1' autoComplete='off'></Input>
-                            <FormLabel for='q-2'>Author</FormLabel>
+                            <FormLabel htmlFor='q-2'>Author</FormLabel>
                             <Input placeholder='John Doe' id='q-2' autoComplete='off'></Input>
                         </FormControl>
                         <FormControl>
