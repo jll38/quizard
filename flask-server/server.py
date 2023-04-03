@@ -20,6 +20,8 @@ def default():
 
 @app.route("/publish", methods=["POST"])
 def publishQuiz():
+    data = request.get_json()
+    print(data)
     return {"message" : "Publish Called!"}
 
 if __name__ == "__main__":
