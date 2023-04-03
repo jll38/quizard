@@ -27,18 +27,33 @@ function QuizDetails() {
     const [numQ, setNumQ] = useState(1);
     const [errors, setErrors] = useState([])
     
+    const questionRef = useRef(null);
+
     const getQuizDetails = () => {
         const questions = [];
         const answers = [];
         const options = [];
+        
+        
         for(let i = 0; i < numQ; i++) {
             questions.push(document.getElementById(`${i}-q-1`).value);
+            answers.push(document.getElementById(`${i}-a`).value);
+            const optionsSub = [];
+            for(let j = 0; j < 4; j++){
+                let option = document.getElementById(`${i}-o-${j}`);
+                if(option !== null){
+                    optionsSub.push(option.value);
+                }
+            }
+            options.push(optionsSub);
         }
         /*Todo: Populate answers and options*/
         console.log(questions);
-        sessionStorage.setItem('questions', questions);
-        sessionStorage.setItem('answers', answers);
-        sessionStorage.setItem('options', options);
+        console.log(options);
+        sessionStorage.setItem('questions', JSON.stringify(questions));
+        sessionStorage.setItem('answers', JSON.stringify(answers));
+        sessionStorage.setItem('options', JSON.stringify(options));
+
     }
     //Redirects user to the Create Page if they have not begun creating the quiz yet (missing quizName and author values)
     useEffect(() => {

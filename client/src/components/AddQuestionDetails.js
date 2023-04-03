@@ -3,10 +3,14 @@ import { useState, forwardRef, useImperativeHandle } from 'react';
 import { Box, Text, Image, FormControl, Input, FormLabel,Button, Divider } from '@chakra-ui/react';
 import { Form } from 'react-router-dom';
 
-export default function AddQuestionDetails({num})
+export default function AddQuestionDetails({num}, { onSendData })
 {   
     const [nOptions, setNumOptions] = useState(0);
     
+    const getNumOptions = () => {
+        return(nOptions + 1);
+    }
+
     const addOptions = () => {
         if(nOptions < 2)
         {
@@ -35,7 +39,7 @@ export default function AddQuestionDetails({num})
             <FormLabel>Question {num + 1}</FormLabel>
             <Input id={num + '-q-1'} autoComplete='off'></Input>
             <FormLabel>Answer</FormLabel>
-            <Input id='answer' autoComplete='off'></Input>
+            <Input id={num + '-a'} autoComplete='off'></Input>
             <FormLabel>Other Option(s)</FormLabel>
             <Input id={num+'-o-1'} autoComplete='off'></Input>
             {RenderOptions()}

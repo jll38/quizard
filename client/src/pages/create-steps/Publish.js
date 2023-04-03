@@ -77,7 +77,6 @@ function Publish() {
             </Text>
             <br />{' '}
             </ScaleOnHover>
-
           </Heading>
         </Stack>
       </Flex>
