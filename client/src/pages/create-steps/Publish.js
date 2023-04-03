@@ -29,6 +29,26 @@ function Publish() {
       'answers' : sessionStorage.getItem('answers'),
       'options' : sessionStorage.getItem('options')
     }
+    fetch('/publish', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(quizInfo),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        console.log(responseData);
+      })
+      .catch((error) => {
+        console.error('Error while sending quizInfo:', error);
+      });
+  
     /*Fetch Request to server POST*/
     sessionStorage.clear();
     /*Redirect to page for quiz*/
