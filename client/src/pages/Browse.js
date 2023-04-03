@@ -22,7 +22,18 @@ import {  Button,
 
 
 function Browse() { 
-
+    const [data, setData] = useState("Loading...")
+    /*useEffect fetching json message from the backend*/
+    useEffect(() => {       
+      fetch("/getQuizzes").then(
+        res => res.json()
+      ).then(
+        data => {
+          setData(data)
+          console.log(data)
+        }
+      )
+    }, [])
   /*Fetch request to server for quiz info from database*/
   return (
     <>
@@ -43,7 +54,7 @@ function Browse() {
       gap={4}
     >
        <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
+        <BrowseCard text='HTML'/>
        </ScaleOnHover>
        <ScaleOnHover>
         <BrowseCard text='HTML Quiz'/>

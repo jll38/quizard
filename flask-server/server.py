@@ -3,6 +3,7 @@ from flask_cors import CORS
 import os
 import sqlite3
 import random
+import json
 
 currentdirectory = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,6 +20,28 @@ with open("db/SQL Scripts/create_tables.sql") as f:
 @app.route("/greeting")
 def default():
     return {"message" : "Hello from the server!"}
+
+@app.route("/getQuizzes", methods=["GET"])
+def getQuizzes():
+    try:
+        cursor = conn.cursor()
+        query = "SELECT id, title, author FROM quizzes"
+        cursor.execute(query)
+        results = cursor.fetchall()
+        print(results)
+        quizzes = []
+        for row in results:
+            quiz = {}
+            quiz['id'] = row[0]
+            quiz['title'] = row[1]
+            quiz['author'] = row[2]
+            quizzes.append(quiz)
+            quizzes_json = json.dumps(quizzes)
+            print(quizzes_json)
+    except Exception as e:
+        conn.rollback()
+        return{"success" : False, "error" : str(e)}
+    return {"quizzes": quizzes_json}
 
 @app.route("/publish", methods=["POST"])
 def publishQuiz():
