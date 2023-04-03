@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text, Image } from '@chakra-ui/react';
 
-const BrowseCard = ({ id, text }) => {
+const BrowseCard = ({ id, text, type='button' }) => {
   const handleMouseDownImage = (event) => {
     event.preventDefault();
   };
@@ -12,7 +12,7 @@ const BrowseCard = ({ id, text }) => {
     maxH="150px" 
     borderRadius="15px" 
     overflow="hidden"
-    as={'button'}
+    as={type}
     >
       <Image
         src="../static/images/quizard.png"

@@ -50,7 +50,7 @@ function Publish() {
       </Flex>
       <Flex flex={5} align={'center'} justify={'center'}>
         <Heading>
-            <BrowseCard text={sessionStorage.getItem("quizName")}></BrowseCard>
+            <BrowseCard text={sessionStorage.getItem("quizName")} type={''}></BrowseCard>
         </Heading>
       </Flex>
     </Stack>
