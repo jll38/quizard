@@ -1,7 +1,7 @@
 import 'antd/dist/reset.css';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
-
+import { Formik } from 'formik';
 import {
     Button,
     Flex,
@@ -15,17 +15,48 @@ import {
     Divider,
     Input,
     FormControl,
-    FormLabel
+    FormLabel,
+    FormHelperText
 } from '@chakra-ui/react'
 import { Form } from 'react-router-dom';
 
 
 function CreatePage() {
+    const [validateError, setValidateError] = useState([])
     useEffect(() => {
         sessionStorage.clear();
     }, []);
+
+    function validateName(name) {
+        console.log('validateName: ', name);
+        var regex = /^[a-zA-Z ]{2,30}$/;
+        if (!name) {
+          setValidateError(prevArray => [...prevArray, 'Please enter a quiz name.']);
+          return false;
+        } else if (!regex.test(name)) {
+          setValidateError(prevArray => [...prevArray, 'Please enter a valid quiz name.']);
+          return false;
+        }
+        console.log('Name Validated');
+        return true;
+      }
+      function validateAuthor(name) {
+        console.log('validateAuthor: ', name);
+        var regex = /^[a-zA-Z ]{2,30}$/;
+        if (!name) {
+          setValidateError(prevArray => [...prevArray, 'Please enter an author name.']);
+          return false;
+        } else if (!regex.test(name)) {
+          setValidateError(prevArray => [...prevArray, 'Please enter a valid author name.']);
+          return false;
+        }
+        console.log('Author Validated');
+        return true;
+      }
+
     function handleCreateQuiz(event) {
         console.log('handleCreateQuiz called')
+        setValidateError([])
         const quizName = document.getElementById('q-1').value;
         const author = document.getElementById('q-2').value;
         const thumbnail = document.getElementById('q-3').files[0];
@@ -34,7 +65,15 @@ function CreatePage() {
         window.sessionStorage.setItem('quizName', quizName);
         window.sessionStorage.setItem('author', author);
         window.sessionStorage.setItem('thumbnail', thumbnail);
-        window.location.assign('/create/details');
+        const validName = validateName(document.getElementById('q-1').value)
+        const validAuthor = validateAuthor(document.getElementById('q-2').value)
+        if( validName && validAuthor)
+        {
+            
+            window.location.assign('/create/details');
+        }
+        else{console.log(validateError)}
+        
     }
     return (
         <>
@@ -49,14 +88,17 @@ function CreatePage() {
                             </Text>
                             <br />{' '}
                         </Heading>
-                        <FormControl>
+                        <FormControl isRequired>
                             <FormLabel for='q-1'>Quiz Name</FormLabel>
                             <Input placeholder='HTML Quiz' id='q-1' autoComplete='off'></Input>
                             <FormLabel for='q-2'>Author</FormLabel>
                             <Input placeholder='John Doe' id='q-2' autoComplete='off'></Input>
-                            <FormLabel for='q-3'>Thumbnail</FormLabel>
+                        </FormControl>
+                        <FormControl>
+                        <FormLabel for='q-3'>Thumbnail</FormLabel>
                             <Input border='none' type='file' id='q-3'></Input>
                             <Button colorScheme='purple' onClick={handleCreateQuiz}>Next</Button>
+                            {(validateError.map((error, index) => <FormHelperText color={'red.600'} key={index}>* {error}</FormHelperText>))}
                         </FormControl>
                     </Stack>
                 </Flex>
