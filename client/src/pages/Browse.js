@@ -22,15 +22,18 @@ import {  Button,
 
 
 function Browse() { 
-    const [data, setData] = useState("Loading...")
+    const [qData, setQData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     /*useEffect fetching json message from the backend*/
     useEffect(() => {       
       fetch("/getQuizzes").then(
         res => res.json()
       ).then(
         data => {
-          setData(data)
+          setIsLoading(false);
           console.log(data)
+          data = JSON.parse(data['quizzes'])
+          setQData(data)
         }
       )
     }, [])
@@ -53,84 +56,11 @@ function Browse() {
       }}
       gap={4}
     >
-       <ScaleOnHover>
-        <BrowseCard text='HTML'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
-       <ScaleOnHover>
-        <BrowseCard text='HTML Quiz'/>
-       </ScaleOnHover>
+      {isLoading ? (<Text>Loading...</Text>) : (qData.map((quiz, index) => (
+            <ScaleOnHover key={index}>
+              <BrowseCard text={quiz.title} id={quiz.id}/>
+            </ScaleOnHover>
+          )))}
     </Grid>
       </Flex>
     </Stack>
