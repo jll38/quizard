@@ -17,14 +17,29 @@ import {
     Input,
     FormControl,
     FormLabel,
-    HStack
+    HStack,
+    FormHelperText
 } from '@chakra-ui/react'
 import { Form } from 'react-router-dom';
 
 
 function QuizDetails() {
     const [numQ, setNumQ] = useState(1);
-    
+    const [errors, setErrors] = useState([])
+    //Validates all the required fields
+    const validate = () => {
+        var regex = /^[a-zA-Z ]{2,30}$/;
+        let question;
+        for(let i = 0; i < numQ; i++) {
+            question = document.getElementById(`${i}-q-1`)
+            if(question == null) 
+            {
+                setErrors(prevArray => [...prevArray, `Please enter Question #${i}`]);
+            } else if(!regex.test(question)){
+                setErrors(prevArray => [...prevArray, `Please enter valid value for Question #${i}`]);
+            }
+        }
+    }
     //Redirects user to the Create Page if they have not begun creating the quiz yet (missing quizName and author values)
     useEffect(() => {
         if (sessionStorage.getItem("quizName") == null || sessionStorage.getItem("author") == null) {
@@ -55,6 +70,7 @@ function QuizDetails() {
     const publish = () => {
         /*TODO: Add Questions & to Session Storage*/
         window.location.assign('/create/publish');
+        
       };
     return (
         <>

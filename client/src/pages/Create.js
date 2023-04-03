@@ -90,7 +90,7 @@ function CreatePage() {
                             </Text>
                             <br />{' '}
                         </Heading>
-                        <FormControl isRequired>
+                        <FormControl>
                             <FormLabel htmlFor='q-1'>Quiz Name</FormLabel>
                             <Input placeholder='HTML Quiz' id='q-1' autoComplete='off'></Input>
                             <FormLabel htmlFor='q-2'>Author</FormLabel>
@@ -105,12 +105,6 @@ function CreatePage() {
                     </Stack>
                 </Flex>
             </Stack>
-
-            <Box minH='10vh'>
-            </Box>
-            <Divider orientation='horizontal' w='100%' />
-            <Box minH='10vh'>
-            </Box>
 
 
         </>
