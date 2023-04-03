@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS quizzes (
-    id INTEGER PRIMARY KEY,
+    id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     questions TEXT NOT NULL,
@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS quizzes (
 );
 
 CREATE TABLE IF NOT EXISTS existing_ids (
-    id INTEGER PRIMARY KEY
+    id TEXT PRIMARY KEY
 );

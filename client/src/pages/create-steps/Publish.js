@@ -50,7 +50,7 @@ function Publish() {
       });
   
     /*Fetch Request to server POST*/
-    sessionStorage.clear();
+    //sessionStorage.clear();
     /*Redirect to page for quiz*/
   }
   return (
