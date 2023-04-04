@@ -13,6 +13,7 @@ const BrowseCard = ({ id, text, type='button' }) => {
     borderRadius="15px" 
     overflow="hidden"
     as={type}
+    onClick={() => {window.location.assign(`/quiz/${id}`)}}
     >
       <Image
         src="../static/images/quizard.png"
