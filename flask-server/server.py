@@ -48,7 +48,16 @@ def getQuiz():
     quiz_id = request.args.get('quizId') # get the quizId parameter from the request
     # use the quizId parameter to retrieve the quiz data from the database
     print(quiz_id)
-    return {"quizData": quiz_id}
+    try:
+        cursor = conn.cursor()
+        query = "SELECT * FROM quizzes WHERE id = ?"
+        cursor.execute(query, (quiz_id,))
+        result = cursor.fetchall()[0]
+        for row in result:
+            print(row)
+    except Exception as e:
+        return {"success" : False, "error" : str(e)}
+    return {"quizData": result}
 
 @app.route("/publish", methods=["POST"])
 def publishQuiz():
