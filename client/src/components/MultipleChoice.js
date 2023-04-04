@@ -6,6 +6,9 @@ import ChoiceBox from './ChoiceBox';
 
 export default function MultipleChoice({data, answer, options})
 {   
+    const setClicked = () => {
+
+    }
     console.log(`Answer = ${answer}`)
     console.log(`Options = ${options}`)
     const optionsArray = [];
@@ -20,7 +23,7 @@ export default function MultipleChoice({data, answer, options})
                 </WrapItem>
                 {optionsArray.map((option, i) => {
                     return (<WrapItem>
-                        <ChoiceBox choice={option}/>
+                        <ChoiceBox choice={option} onClick={setClicked}/>
                     </WrapItem>)
                 })}
             </Wrap>

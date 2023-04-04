@@ -50,8 +50,8 @@ function Publish() {
       });
   
     /*Fetch Request to server POST*/
-    //sessionStorage.clear();
-    /*Redirect to page for quiz*/
+    sessionStorage.clear();
+    window.location.assign(`/quizzes`)
   }
   return (
     <>

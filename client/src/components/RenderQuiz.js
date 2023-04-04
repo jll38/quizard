@@ -21,7 +21,7 @@ export default function RenderQuiz({data})
             {questions.map((question, i) => {
                 return(<FormControl name={'q-'+i}>
                     <Text fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} fontWeight={'500'}>{question}</Text>
-                    <MultipleChoice answer={answers[i]} options={options}/>
+                    <MultipleChoice answer={answers[i]} options={options[i]}/>
                 </FormControl>);
             })}
         </Box>
