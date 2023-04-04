@@ -1,6 +1,7 @@
 import 'antd/dist/reset.css';
 import '../App.css';
 import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import {
     Button,
     Flex,
@@ -21,6 +22,16 @@ import RenderQuiz from '../components/RenderQuiz';
 
 function Quiz() {
     const {id} = useParams();
+    const [data, setData] = useState();
+    useEffect(() => {       
+        fetch(`/getQuiz?quizId=${id}`)
+  .then(response => response.json())
+  .then(data => {
+    setData(data.quizData);
+    console.log(data.quizData);
+  })
+  .catch(error => console.error(error));
+      }, [])
     return (
         <>
             <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>

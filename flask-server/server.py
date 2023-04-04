@@ -43,6 +43,13 @@ def getQuizzes():
         return{"success" : False, "error" : str(e)}
     return {"quizzes": quizzes_json}
 
+@app.route("/getQuiz")
+def getQuiz():
+    quiz_id = request.args.get('quizId') # get the quizId parameter from the request
+    # use the quizId parameter to retrieve the quiz data from the database
+    print(quiz_id)
+    return {"quizData": quiz_id}
+
 @app.route("/publish", methods=["POST"])
 def publishQuiz():
     data = request.get_json()
