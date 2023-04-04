@@ -85,7 +85,7 @@ def publishQuiz():
 
 def genUniqueID(title, author):
     rand = random.randint(1000, 9999)
-    id = f"{title[0]}{author[0]}{str(rand)}"
+    id = f"{title[0]}{author[0]}{str(rand)}".lower()
     return id
 
 if __name__ == "__main__":

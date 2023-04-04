@@ -24,7 +24,7 @@ function Quiz() {
     const {id} = useParams();
     const [data, setData] = useState();
     useEffect(() => {       
-        fetch(`/getQuiz?quizId=${id}`)
+        fetch(`/getQuiz?quizId=${id.toLocaleLowerCase()}`)
   .then(response => response.json())
   .then(data => {
     setData(data.quizData);
@@ -44,7 +44,7 @@ function Quiz() {
                                 Take a <Text as={'span'} color={'purple.400'}> Quiz</Text>
                             </Text>
                             <br />{' '}
-                            <RenderQuiz id={id}></RenderQuiz>
+                            <RenderQuiz id={id.toLowerCase()}></RenderQuiz>
                         </Heading>
                     </Stack>
                 </Flex>
