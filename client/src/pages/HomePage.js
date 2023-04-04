@@ -59,6 +59,9 @@ function HomePage() {
               color={'white'}
               _hover={{
                 bg: 'purple.500',
+              }}
+              onClick={() =>{
+                window.location.assign(`/create`)
               }}>
               Create a Quiz
             </Button>
