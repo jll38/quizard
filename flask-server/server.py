@@ -37,7 +37,6 @@ def getQuizzes():
             quiz['author'] = row[2]
             quizzes.append(quiz)
             quizzes_json = json.dumps(quizzes)
-            print(quizzes_json)
     except Exception as e:
         conn.rollback()
         return{"success" : False, "error" : str(e)}
@@ -64,10 +63,13 @@ def publishQuiz():
     data = request.get_json()
     title = data["title"]
     author = data["author"]
+    # thumbnail = request.files['thumbnail']
     questions = str(data["questions"])
     answers = str(data["answers"])
     options = str(data["options"])
     print(data)
+    # filename = thumbnail.filename
+    # thumbnail.save('./client/public/static/images/quizzes/' + filename)
     qID = genUniqueID(title, author)
     print(f"Unique ID: {qID}")
     try:

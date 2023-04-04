@@ -19,8 +19,8 @@ export default function RenderQuiz({data})
             <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>By: {data[2]}</Text>
             </Heading>
             {questions.map((question, i) => {
-                return(<FormControl name={'q-'+i}>
-                    <Text fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} fontWeight={'500'}>{question}</Text>
+                return(<FormControl name={'q-'+i} my='5'>
+                    <Text fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} fontWeight={'500'} my={'2'}>{question}</Text>
                     <MultipleChoice answer={answers[i]} options={options[i]}/>
                 </FormControl>);
             })}
