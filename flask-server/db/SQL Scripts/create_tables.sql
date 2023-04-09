@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS quizzes (
-    id TEXT PRIMARY KEY,
+    id TEXT,
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     questions TEXT NOT NULL,

@@ -17,6 +17,11 @@ with open("db/SQL Scripts/create_tables.sql") as f:
     commands = f.read()
     conn.executescript(commands)
 
+# Populate database (for testing purposes)
+#with open("db/SQL Scripts/test-populate.sql") as f:
+#    commands = f.read()
+#    conn.executescript(commands)
+
 @app.route("/greeting")
 def default():
     return {"message" : "Hello from the server!"}
