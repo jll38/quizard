@@ -40,13 +40,9 @@ function Browse() {
   /*Fetch request to server for quiz info from database*/
   return (
     <>
-    <Stack minH='85vh' direction={{ base: 'column', md: 'row' }} maxH='700px'>
-      <Flex p={10} flex={1} align={'center'} justify={'center'}>
-        <Container top={0} left={0} position='relative'>
-          <Text color={'gray.600'}>Filters</Text>
-        </Container>
-      </Flex>
-      <Flex flex={13} borderLeft='1px' overflowY='scroll' p={'40px'}>
+    <Stack minH='50vh' direction={{ base: 'column', md: 'row' }} maxH='700px'>
+
+      <Flex flex={13} overflowY='scroll' p={'40px'} maxH={'77vh'}>
       <Grid
       templateColumns={{
         base: 'repeat(1, 1fr)',

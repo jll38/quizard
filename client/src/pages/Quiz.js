@@ -16,7 +16,8 @@ import {
     Input,
     FormControl,
     FormLabel,
-    FormHelperText
+    FormHelperText,
+    HStack
 } from '@chakra-ui/react'
 import RenderQuiz from '../components/RenderQuiz';
 

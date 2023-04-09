@@ -43,8 +43,6 @@ export default function MultipleChoice({ data, answer, options, qNum }) {
     setCorrectAnswerIndex(optionsArray.indexOf(answer));
   }, [optionsArray, answer]);
 
-  console.log(`Correct Answer Index: ${correctAnswerIndex}`);
-
   const [correctBoxId, setCorrectBoxId] = useState('');
 
   useEffect(() => {
