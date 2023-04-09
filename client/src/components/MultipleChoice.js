@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Box, Text, Image, FormControl, Input, FormLabel, Button, Divider, Heading, Flex, Spacer, Wrap, WrapItem } from '@chakra-ui/react';
 import { Form } from 'react-router-dom';
 import ChoiceBox from './ChoiceBox';
@@ -13,8 +13,10 @@ function shuffleArray(array) {
 
 export default function MultipleChoice({ data, answer, options, qNum }) {
   const [correctAnswerIndex, setCorrectAnswerIndex] = useState(-1);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const setClicked = (id, choiceValue) => {
+    console.log('isDisabled: ' + isDisabled);
     console.log(`Clicked ChoiceBox ID: ${id}`);
     console.log(`Clicked ChoiceBox Value: ${choiceValue}`);
     if (choiceValue === answer) {
@@ -22,19 +24,19 @@ export default function MultipleChoice({ data, answer, options, qNum }) {
     } else {
       console.log('Incorrect Answer!');
     }
+    setIsDisabled(true);
   };
-  console.log(`Answer = ${answer}`);
-  console.log(`Options = ${options}`);
-  const optionsArray = [];
-  for (let key in options) {
-    optionsArray.push(String(options[key]));
-  }
 
-  // Add answer to optionsArray
-  optionsArray.push(answer);
-
-  // Shuffle the optionsArray
-  shuffleArray(optionsArray);
+  // Create and shuffle the optionsArray using useMemo
+  const optionsArray = useMemo(() => {
+    const newArray = [];
+    for (let key in options) {
+      newArray.push(String(options[key]));
+    }
+    newArray.push(answer);
+    shuffleArray(newArray);
+    return newArray;
+  }, [options, answer]);
 
   // Find the index of the correct answer
   useEffect(() => {
@@ -43,13 +45,27 @@ export default function MultipleChoice({ data, answer, options, qNum }) {
 
   console.log(`Correct Answer Index: ${correctAnswerIndex}`);
 
+  const [correctBoxId, setCorrectBoxId] = useState('');
+
+  useEffect(() => {
+    setCorrectBoxId('q-' + qNum + '-c-' + optionsArray.indexOf(answer));
+  }, [optionsArray, answer, qNum]);
+
   return (
     <>
       <Wrap spacing="50px" align="center">
         {optionsArray.map((option, i) => {
+          const boxId = 'q-' + qNum + '-c-' + i;
           return (
             <WrapItem key={i}>
-              <ChoiceBox choice={option} onClick={(id, choiceValue) => setClicked(id, choiceValue)} id={'q-' + qNum + '-c-' + i} />
+              <ChoiceBox
+                choice={option}
+                onClick={(id, choiceValue) => setClicked(id, choiceValue)}
+                id={boxId}
+                disabled={isDisabled}
+                correctAnswer={answer}
+                isCorrectBox={boxId === correctBoxId}
+              />
             </WrapItem>
           );
         })}
