@@ -37,33 +37,39 @@ function AboutPage() {
                     </Stack>
                 </Flex>
             </Stack>
+            <Box textIndent={'50px'}>
             <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum ex,
-                rhoncus in sagittis sed, egestas sed arcu. Sed at dapibus quam,
-                non viverra dui. Nunc laoreet interdum felis, sed finibus ex
-                semper in. Morbi orci orci, ultrices id libero eu, consequat
-                volutpat lacus. Sed pretium nisl vel mollis congue.
-                Nam nisl metus, luctus dictum odio a, tempor malesuada ante.
-                Praesent lobortis convallis elit, ac scelerisque lorem feugiat sit amet.
-                Maecenas accumsan malesuada blandit. Nam et magna sed ipsum lacinia 
-                convallis vel ac lorem. Morbi dignissim erat commodo mi malesuada, 
-                id tincidunt sapien tempor. Suspendisse augue orci, elementum et euismod eget, 
-                tincidunt a arcu. Praesent pharetra interdum elit nec lobortis. Cras blandit
-                 ornare dolor, et pulvinar neque placerat vel. Praesent bibendum 
-                 scelerisque odio eget aliquet. Nulla et velit urna.
+            Welcome to Quizard, the ultimate destination for quiz enthusiasts and creators alike! 
+            Our mission is to make learning and challenging knowledge a fun, interactive, and engaging
+             experience for users of all ages and backgrounds. </Text>
+             <br/>
+            <Text>At Quizard, we are passionate about empowering our users to create custom quizzes 
+            tailored to their interests and needs. With multiple question types and varying 
+            difficulty levels, our platform enables you to craft quizzes that truly test your friends' 
+            and your own knowledge. Our user-friendly interface, built with ChakraUI, ensures a rich and 
+            intuitive experience that makes quiz creation a breeze.
             </Text>
-            <br/>
             <Text>
-            In sit amet lectus nec libero interdum ornare a cursus ligula. 
-            Suspendisse interdum mollis orci eget laoreet. Suspendisse potenti. 
-            Nunc ultrices tellus vitae massa tincidunt accumsan. 
-            Vestibulum odio nisi, lobortis quis congue quis, 
-            vulputate sit amet ante. Nunc eleifend, metus eget commodo 
-            consequat, nulla est suscipit erat, in aliquet est ante nec ex. 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Maecenas ac auctor erat.
+            Sharing your quizzes with friends is quick and easy, thanks to our unique sharing links. 
+            You can send these links to your friends or even post them on social media, allowing 
+            others to test their skills and join in on the fun. 
             </Text>
+            <Text>
+            We understand that tracking progress and performance is essential for 
+            growth and improvement. That's why we've developed a comprehensive user profile 
+            and statistics system, so you can monitor your achievements and compare your results with 
+            your friends.
+            </Text>
+            <Text>
+            Our responsive design guarantees an optimized experience on different devices, 
+            ensuring that you can enjoy Quizard wherever you are, whenever you want. Whether you're on your 
+            desktop, laptop, tablet, or smartphone, our platform seamlessly adapts to your device for a 
+            smooth and enjoyable user experience.
 
+            <br/>
+            Join the Quizard community today and unleash your inner quizmaster!
+            </Text>
+            </Box>
             <Box minH='10vh'>
             </Box>
             <Divider orientation='horizontal' w='100%' />
