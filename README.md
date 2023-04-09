@@ -9,11 +9,13 @@ Quizard is a web application that allows users to create custom quizzes, share t
 - [Getting Started](#getting-started)
 
 ## Features
-1. Create custom quizzes with multiple question types and varying difficulty levels.
-2. Share quizzes with friends using unique links.
-3. Track progress and performance with user profiles and statistics.
-4. Responsive design for an optimized experience on different devices.
-5. Rich and intuitive user interface built with ChakraUI.
+- &#9745; Create custom quizzes with multiple question types and varying difficulty levels.
+- &#9745; Share quizzes with friends using unique links.
+- &#x2610;Track progress and performance with user profiles and statistics.
+- &#9745; Browse List of Quizzes to take
+- &#x2610; Filter quizzes based on category
+- &#9745; Responsive design for an optimized experience on different devices.
+- &#9745; Rich and intuitive user interface built with ChakraUI.
 
 ## Technologies Used
 - React: Frontend library for building user interfaces.
