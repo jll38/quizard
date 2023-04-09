@@ -53,15 +53,19 @@ function CreatePage() {
         console.log('Author Validated');
         return true;
       }
-
+function genUniqueID(title, author) {
+    let rand = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+    let id = `${title[0]}${author[0]}${rand}`.toLowerCase();
+    return id;
+    }
     function handleCreateQuiz(event) {
         console.log('handleCreateQuiz called')
         setValidateError([])
         const quizName = document.getElementById('q-1').value;
         const author = document.getElementById('q-2').value;
         const thumbnail = document.getElementById('q-3').files[0];
-
-        console.log(`Quiz Information: Quiz Name: ${quizName}, author ${author}, thumbnail: ${thumbnail}`);
+        const id = genUniqueID(quizName, author);
+        console.log(`Quiz Information: Quiz Name: ${quizName}, author ${author}, thumbnail: ${thumbnail}, id: ${id}`);
         
         const validName = validateName(quizName)
         const validAuthor = validateAuthor(author)
@@ -70,6 +74,7 @@ function CreatePage() {
             window.sessionStorage.setItem('quizName', quizName);
             window.sessionStorage.setItem('author', author);
             window.sessionStorage.setItem('thumbnail', thumbnail);
+            window.sessionStorage.setItem('quizID', id)
             window.location.assign('/create/details');
         }
         else{

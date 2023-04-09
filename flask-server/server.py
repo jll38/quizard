@@ -67,10 +67,11 @@ def publishQuiz():
     questions = str(data["questions"])
     answers = str(data["answers"])
     options = str(data["options"])
+    qID = str(data['id'])
     print(data)
     # filename = thumbnail.filename
     # thumbnail.save('./client/public/static/images/quizzes/' + filename)
-    qID = genUniqueID(title, author)
+    
     print(f"Unique ID: {qID}")
     try:
         cursor = conn.cursor()
@@ -84,11 +85,6 @@ def publishQuiz():
         conn.rollback()
         return{"success": False, "error" : str(e)}
     return {"success" : True, "message" : "Quiz successfully published!"}
-
-def genUniqueID(title, author):
-    rand = random.randint(1000, 9999)
-    id = f"{title[0]}{author[0]}{str(rand)}".lower()
-    return id
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

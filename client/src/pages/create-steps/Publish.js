@@ -21,13 +21,15 @@ function Publish() {
   //Sends quiz information to server, which will handle the database changes.
   const handlePublish = () => {
     console.log('handlePublish() called');
+    const id = sessionStorage.getItem('quizID')
     const quizInfo = {
       'title': sessionStorage.getItem('quizName'),
       'author': sessionStorage.getItem('author'),
       'thumbnail': sessionStorage.getItem('thumbnail') === undefined ? 'default' : sessionStorage.getItem('thumbnail'),
       'questions': sessionStorage.getItem('questions'),
       'answers' : sessionStorage.getItem('answers'),
-      'options' : sessionStorage.getItem('options')
+      'options' : sessionStorage.getItem('options'),
+      'id': id
     }
     fetch('/publish', {
       method: 'POST',
@@ -51,7 +53,7 @@ function Publish() {
   
     /*Fetch Request to server POST*/
     sessionStorage.clear();
-    window.location.assign(`/quizzes`)
+    window.location.assign(`/quiz/${id}`);
   }
   return (
     <>
