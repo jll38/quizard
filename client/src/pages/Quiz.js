@@ -42,6 +42,7 @@ function Quiz() {
                 <Flex p={8} flex={10} align={'center'} justify={'center'}>
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
                             {isLoading ? (<LoadingAnimation/>) : (<RenderQuiz data={data}></RenderQuiz>)}
+                            <Button w={'20%'} color={'white'} bgColor={'purple.500'} _hover={{bgColor: 'purple.300'}}>Submit</Button>
                     </Stack>
                 </Flex>
             </Stack>

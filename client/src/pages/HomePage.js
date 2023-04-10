@@ -14,7 +14,8 @@ import {  Button,
   Text,
   useBreakpointValue, 
   Box,
-  Divider} from '@chakra-ui/react'
+  Divider,
+  Center} from '@chakra-ui/react'
 
 
 function HomePage() { 
@@ -74,6 +75,7 @@ function HomePage() {
         </Stack>
       </Flex>
       <Flex flex={1}>
+        <Center>
         <Image
           alt={'quizard logo'}
           objectFit={'cover'}
@@ -81,7 +83,9 @@ function HomePage() {
             'static\images\quizard-2.png'
           borderRadius='20px'
           boxShadow='2px 4px 10px -2px rgba(0, 0, 0)'
+          h={'350px'}
         />
+        </Center>
       </Flex>
     </Stack>
     <Box minH='10vh'>
