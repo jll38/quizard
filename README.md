@@ -24,6 +24,8 @@ Quizard is a web application that allows users to create custom quizzes, share t
 - Python Flask: A lightweight web framework for Python, used to build the backend API.
 - Playwright: A JavaScript framework for Web Testing and Automation.
 
+[Todo](TODO.md)
+
 ## Installation
 To set up the project locally, follow these steps:
 
@@ -35,7 +37,6 @@ To set up the project locally, follow these steps:
 `npm install`
 `cd ../flask-server`
 `pip install -r requirements.txt`
-
 
 ## Getting Started
 1. Start the backend Flask server:
