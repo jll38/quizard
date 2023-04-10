@@ -3,6 +3,7 @@ import '../App.css';
 import React, { useState, useEffect } from 'react';
 import BrowseCard from '../components/BrowseCard';
 import ScaleOnHover from '../components/ScaleOnHover';
+import LoadingAnimation from '../components/LoadingText';
 
 import {  Button,
   Flex,
@@ -52,7 +53,7 @@ function Browse() {
       }}
       gap={4}
     >
-      {isLoading ? (<Text>Loading...</Text>) : (qData.map((quiz, index) => (
+      {isLoading ? (<LoadingAnimation/>) : (qData.map((quiz, index) => (
             <ScaleOnHover key={index}>
               <BrowseCard text={quiz.title} id={quiz.id}/>
             </ScaleOnHover>

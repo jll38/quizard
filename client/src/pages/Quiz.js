@@ -2,6 +2,7 @@ import 'antd/dist/reset.css';
 import '../App.css';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import LoadingAnimation from '../components/LoadingText';
 import {
     Button,
     Flex,
@@ -40,7 +41,7 @@ function Quiz() {
             <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }} w='100%'>
                 <Flex p={8} flex={10} align={'center'} justify={'center'}>
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
-                            {isLoading ? (<Text>Loading...</Text>) : (<RenderQuiz data={data}></RenderQuiz>)}
+                            {isLoading ? (<LoadingAnimation/>) : (<RenderQuiz data={data}></RenderQuiz>)}
                     </Stack>
                 </Flex>
             </Stack>
