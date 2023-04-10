@@ -19,10 +19,17 @@ import {  Button,
 
 
 function HomePage() { 
-  const springs = useSpring({
-    from: { x: 0 },
-    to: { x: 100 },
-  })
+  const [data, setData] = useState();
+  useEffect(() => {       
+    fetch("/homepage").then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+    )
+  }, [])
 
   return (
     <>
