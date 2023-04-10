@@ -101,7 +101,7 @@ def publishQuiz():
 def homepage():
     try:
         cursor = conn.cursor()
-        query = "SELECT id, title FROM quizzes ORDER BY views DESC LIMIT 4"
+        query = "SELECT id, title, views FROM quizzes ORDER BY views DESC LIMIT 4"
         cursor.execute(query)
         result = cursor.fetchall()
         res = json.dumps(result)

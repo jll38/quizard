@@ -1,6 +1,9 @@
 import 'antd/dist/reset.css';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
+import LoadingAnimation from '../components/LoadingText';
+import ScaleOnHover from '../components/ScaleOnHover';
+import BrowseCard from '../components/BrowseCard';
 import HeaderDiv from '../components/HeaderDiv';
 import Feature from '../components/Feature';
 import { useSpring, animated } from 'react-spring';
@@ -20,12 +23,14 @@ import {  Button,
 
 function HomePage() { 
   const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {       
     fetch("/homepage").then(
       res => res.json()
     ).then(
       data => {
         setData(data)
+        setIsLoading(false)
         console.log(data)
       }
     )
@@ -103,10 +108,17 @@ function HomePage() {
     <VStack minH={'50vh'} spacing={{ base: 4, md: 6 }}>
   <Heading fontSize={{ base: '3xl', md: '3xl', lg: '4xl' }}>Hottest Quizzes</Heading>
   <Stack spacing={8} direction={{ base: 'column', md: 'row' }}>
-    <Feature title='HTML Quiz'></Feature>
-    <Feature title='IS247 Quiz'></Feature>
-    <Feature title='HTML Quiz'></Feature>
-    <Feature title='IS247 Quiz'></Feature>
+  {isLoading ? (
+  <LoadingAnimation/>
+) : (
+  data.map((quiz, index) => (
+    <ScaleOnHover key={index}>
+      <BrowseCard text={quiz[1]} id={quiz[0]}/>
+      <Text>{quiz[2]} views</Text>
+    </ScaleOnHover>
+  ))
+)}
+
   </Stack>
 </VStack>
 
