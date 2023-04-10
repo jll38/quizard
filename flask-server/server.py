@@ -11,16 +11,24 @@ currentdirectory = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 CORS(app)
 
+def populate_database_if_empty():
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM quizzes")
+    count = cursor.fetchone()[0]
+
+    if count == 0:
+        with open("db/SQL Scripts/test-populate.sql") as f:
+            commands = f.read()
+            conn.executescript(commands)
+            
 # set up database connection
 conn = sqlite3.connect("./db/quizard.sqlite", uri=True, check_same_thread=False)
 with open("db/SQL Scripts/create_tables.sql") as f:
     commands = f.read()
     conn.executescript(commands)
 
-## Populate database (for testing purposes)
-#with open("db/SQL Scripts/test-populate.sql") as f:
-#    commands = f.read()
-#    conn.executescript(commands)
+populate_database_if_empty()
+
 
 @app.route("/greeting")
 def default():

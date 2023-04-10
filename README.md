@@ -1,7 +1,7 @@
 # Quizard: The Interactive Quiz Platform
 
 Quizard is a web application that allows users to create custom quizzes, share them with friends, and challenge their knowledge in a fun and interactive way. Built with React, React Router, ChakraUI, and Python Flask, this platform offers an engaging and seamless user experience.
-<img src='homepage.png' max-width='300px'></img>
+<img src='Quizard.gif' max-width='300px'></img>
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
