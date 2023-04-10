@@ -24,9 +24,11 @@ import {  Button,
 function HomePage() { 
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {       
+  useEffect(() => {
+    console.log('UseEffect Called')
     fetch("/homepage").then(
       res => res.json()
+      
     ).then(
       data => {
         setData(data)

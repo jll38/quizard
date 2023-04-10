@@ -20,9 +20,9 @@ import { ChakraProvider, Container } from '@chakra-ui/react'
 function App() {
 
   const [data, setData] = useState([{}]);
-  
+
   /*useEffect fetching json message from the backend*/
-  useEffect(() => {       
+  useEffect(() => {
     fetch("/greeting").then(
       res => res.json()
     ).then(
@@ -33,19 +33,24 @@ function App() {
     )
   }, [])
   return (
-    <ChakraProvider> {/*Neccesary for ChakraUI elements to work. To not use ChakraUI replace <ChakraProvider></ChakraProvider> with <></>*/}
+    <ChakraProvider>
+      {/* Neccesary for ChakraUI elements to work. To not use ChakraUI replace <ChakraProvider></ChakraProvider> with <></> */}
       <Navbar />
-      <Container maxW='1000px' p='20px' mb='10px'centerContent>
+      <Container maxW="1000px" p="20px" mb="10px" centerContent>
         <Router>
-          <Routes> {/*Add routes for new pages here | See ./pages */}
-            <Route path="*" element={<NotFound />} /> {/*Wildcard Path, any URL that isn't defined in another route will land here*/}
+          <Routes>
+            {/* Add routes for new pages here | See ./pages */}
             <Route path="/" element={<HomePage />} />
-            <Route path="/quizzes" element={<Browse />} /> 
+            <Route path="/quizzes" element={<Browse />} />
             <Route path="/create" element={<CreatePage />} />
-            <Route path="/create/details" element={<QuizDetails />} /> 
-            <Route path="/create/publish" element={<Publish/>} /> 
+            <Route path="/create/details" element={<QuizDetails />} />
+            <Route path="/create/publish" element={<Publish />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/quiz/:id" element={<Quiz />} />
+            <Route
+              path="*"
+              element={<NotFound />}
+            /> {/* Wildcard Path, any URL that isn't defined in another route will land here */}
           </Routes>
         </Router>
       </Container>
