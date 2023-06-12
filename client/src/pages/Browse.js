@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import BrowseCard from "../components/BrowseCard";
 import ScaleOnHover from "../components/ScaleOnHover";
 import LoadingAnimation from "../components/LoadingText";
-import ScrollFade from "@benestudioco/react-scrollfade/dist/ScrollFade";
+
 
 import {
   Button,
