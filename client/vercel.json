@@ -1,6 +1,9 @@
 {
     "rewrites": [
-      { "source": "/(.*)", "destination": "https://quizard-backend-final.herokuapp.com/$1" }
+      {
+        "source": "/api/:path*",
+        "destination": "https://quizard-backend-final.herokuapp.com/api/:path*"
+      }
     ]
   }
   
