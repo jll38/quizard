@@ -1,5 +1,6 @@
 build:
   languages:
-    python: true
+    - python
+
 run:
   web: python flask-server/server.py
