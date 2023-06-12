@@ -1,4 +1,3 @@
-import 'antd/dist/reset.css';
 import './App.css';
 import NotFound from './pages/NotFound';
 import HomePage from './pages/HomePage';

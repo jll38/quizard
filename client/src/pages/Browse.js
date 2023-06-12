@@ -1,4 +1,3 @@
-import "antd/dist/reset.css";
 import "../App.css";
 import React, { useState, useEffect } from "react";
 import BrowseCard from "../components/BrowseCard";

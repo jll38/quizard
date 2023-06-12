@@ -1,4 +1,3 @@
-import "antd/dist/reset.css";
 import "../App.css";
 import React, { useState, useEffect } from "react";
 import HeaderDiv from "../components/HeaderDiv";
@@ -23,12 +22,26 @@ function AboutPage() {
   /*Contents of Homepage*/
   return (
     <>
-      <Box position={"absolute"} h={300} width={325} opacity=".40" top={"40%"}right={0}
-      zIndex={-1}>
+      <Box
+        position={"absolute"}
+        h={300}
+        width={325}
+        opacity=".40"
+        top={"40%"}
+        right={0}
+        zIndex={-1}
+      >
         <img src="/static/images/quadratic.png" id="quadratic-img"></img>
       </Box>
-      <Box position={"absolute"} h={300} width={325} opacity=".30" top={"60%"} left={0}
-      zIndex={-1}>
+      <Box
+        position={"absolute"}
+        h={300}
+        width={325}
+        opacity=".30"
+        top={"60%"}
+        left={0}
+        zIndex={-1}
+      >
         <img src="/static/images/grad-cap.png" id="cap-img"></img>
       </Box>
       <Stack minH={"40vh"} direction={{ base: "column", md: "row" }}>
