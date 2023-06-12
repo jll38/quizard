@@ -12,7 +12,7 @@ export default function ChoiceBox({ choice, id, onClick, disabled, correctAnswer
       if (isCorrectBox) {
         setBgColor('green.500');
       } else {
-        setBgColor(selectedBgColor || 'gray.600');
+        setBgColor(selectedBgColor || 'gray.400');
       }
       setHvColor('');
     } else {
@@ -22,7 +22,7 @@ export default function ChoiceBox({ choice, id, onClick, disabled, correctAnswer
 
   const handleClick = (id, choice) => {
     if (choice !== correctAnswer) {
-      setSelectedBgColor('red.500');
+      setSelectedBgColor('gray.600');
     }
     onClick(id, choice);
   };
@@ -39,6 +39,7 @@ export default function ChoiceBox({ choice, id, onClick, disabled, correctAnswer
         p="10px"
         id={id}
         disabled={disabled}
+        fontSize={{base: ".75em", md: "1em"}}
         onClick={() => handleClick(id, choice)}
         _hover={{
           bg: { hvColor },

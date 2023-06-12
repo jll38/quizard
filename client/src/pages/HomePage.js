@@ -40,6 +40,28 @@ function HomePage() {
 
   return (
     <>
+    <Box
+        position={"absolute"}
+        h={300}
+        width={325}
+        opacity=".40"
+        top={"40%"}
+        right={0}
+        zIndex={-1}
+      >
+        <img src="/static/images/quadratic.png" id="quadratic-img"></img>
+      </Box>
+      <Box
+        position={"absolute"}
+        h={300}
+        width={325}
+        opacity=".30"
+        top={"60%"}
+        left={0}
+        zIndex={-1}
+      >
+        <img src="/static/images/grad-cap.png" id="cap-img"></img>
+      </Box>
     <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
@@ -47,6 +69,7 @@ function HomePage() {
             <Text
               as={'span'}
               position={'relative'}
+              textColor={'gray.700'}
               _after={{
                 content: "''",
                 width: 'full',

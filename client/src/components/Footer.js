@@ -15,7 +15,8 @@ import {
     return (
       <Box
         bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+        color={useColorModeValue('gray.700', 'gray.200')}
+        position={"relative"}>
         <Container centerContent
           maxW={'6xl'}
           py={4}
@@ -29,7 +30,7 @@ import {
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'https://julianlechner.herokuapp.com'}
+            href={'https://jlechner.com'}
             target='_blank'>
             Portfolio
           </Button>

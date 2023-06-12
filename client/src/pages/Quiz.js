@@ -39,8 +39,8 @@ function Quiz() {
     return (
         <>
             <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }} w='100%'>
-                <Flex p={8} flex={10} align={'center'} justify={'center'}>
-                    <Stack spacing={6} w={'full'} maxW={'lg'}>
+                <Flex p={8} flex={10} align={'center'} justify={'center'} >
+                    <Stack spacing={6} w={'full'} maxW={'full'}>
                             {isLoading ? (<LoadingAnimation/>) : (<RenderQuiz data={data}></RenderQuiz>)}
                             <Button w={'20%'} color={'white'} bgColor={'purple.500'} _hover={{bgColor: 'purple.300'}}>Submit</Button>
                     </Stack>

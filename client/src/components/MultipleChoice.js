@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Box, Text, Image, FormControl, Input, FormLabel, Button, Divider, Heading, Flex, Spacer, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box, Text, Image, FormControl, Input, FormLabel, Button, Divider, Heading, Flex, Spacer, Wrap, WrapItem, SimpleGrid } from '@chakra-ui/react';
 import { Form } from 'react-router-dom';
 import ChoiceBox from './ChoiceBox';
 
@@ -51,12 +51,12 @@ export default function MultipleChoice({ data, answer, options, qNum }) {
 
   return (
     <>
-      <Wrap spacing="50px" align="center">
+      <SimpleGrid columns={{base:1, sm:2}} gap={4}>
         {optionsArray.map((option, i) => {
           const boxId = 'q-' + qNum + '-c-' + i;
           return (
-            <WrapItem key={i}>
               <ChoiceBox
+              key={i}
                 choice={option}
                 onClick={(id, choiceValue) => setClicked(id, choiceValue)}
                 id={boxId}
@@ -64,10 +64,9 @@ export default function MultipleChoice({ data, answer, options, qNum }) {
                 correctAnswer={answer}
                 isCorrectBox={boxId === correctBoxId}
               />
-            </WrapItem>
           );
         })}
-      </Wrap>
+      </SimpleGrid>
     </>
   );
 }
