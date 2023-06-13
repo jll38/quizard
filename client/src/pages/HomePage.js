@@ -26,7 +26,7 @@ function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     console.log("UseEffect Called");
-    fetch("/homepage")
+    fetch("https://quizard-backend-final.herokuapp.com/api/homepage")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

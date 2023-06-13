@@ -22,7 +22,7 @@ function App() {
 
   /*useEffect fetching json message from the backend*/
   useEffect(() => {
-    fetch("/greeting").then(
+    fetch("https://quizard-backend-final.herokuapp.com/api/greeting").then(
       res => res.json()
     ).then(
       data => {

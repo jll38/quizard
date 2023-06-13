@@ -34,7 +34,7 @@ function Publish() {
       options: sessionStorage.getItem("options"),
       id: id,
     };
-    fetch("/publish", {
+    fetch("https://quizard-backend-final.herokuapp.com/api/publish", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

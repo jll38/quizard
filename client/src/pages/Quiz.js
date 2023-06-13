@@ -26,7 +26,7 @@ function Quiz() {
   const [data, setData] = useState();
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`/getQuiz?quizId=${id.toLocaleLowerCase()}`)
+    fetch(`https://quizard-backend-final.herokuapp.com/api/getQuiz?quizId=${id.toLocaleLowerCase()}`)
       .then((response) => response.json())
       .then((data) => {
         setData(data.quizData);
