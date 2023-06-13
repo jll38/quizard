@@ -27,7 +27,7 @@ function Browse() {
   const [isLoading, setIsLoading] = useState(true);
   /*useEffect fetching json message from the backend*/
   useEffect(() => {
-    fetch("/getQuizzes")
+    fetch("https://quizard-backend-final.herokuapp.com/api/getQuizzes")
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
