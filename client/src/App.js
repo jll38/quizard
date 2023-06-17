@@ -9,6 +9,7 @@ import Browse from './pages/Browse';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Quiz from './pages/Quiz';
+import Dashboard from './pages/auth/dashboard';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { ChakraProvider, Container } from '@chakra-ui/react'
@@ -45,6 +46,7 @@ function App() {
             <Route path="/create/details" element={<QuizDetails />} />
             <Route path="/create/publish" element={<Publish />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/quiz/:id" element={<Quiz />} />
             <Route
               path="*"
