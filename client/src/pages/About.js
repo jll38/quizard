@@ -44,7 +44,7 @@ function AboutPage() {
       >
         <img src="/static/images/grad-cap.png" id="cap-img"></img>
       </Box>
-      <Stack minH={"40vh"} direction={{ base: "column", md: "row" }}>
+      <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
         <Flex p={8} flex={12} align={"center"} justify={"center"}>
           <Stack spacing={6} w={"full"} maxW={"lg"}>
             <Heading
@@ -64,7 +64,7 @@ function AboutPage() {
           </Stack>
         </Flex>
       </Stack>
-      <Box>
+      <Box fontWeight={500}>
         <Text>
           Welcome to Quizard, the ultimate destination for quiz enthusiasts and
           creators alike! Our mission is to make learning and challenging

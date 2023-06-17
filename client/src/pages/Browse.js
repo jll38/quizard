@@ -61,8 +61,8 @@ function Browse() {
       >
         <img src="/static/images/grad-cap.png" id="cap-img"></img>
       </Box>
-      <Stack minH="50vh" direction={{ base: "column", md: "row" }} maxH="700px">
-        <Flex flex={13} overflowY="scroll" p={"40px"} maxH={"77vh"}>
+      <Stack h={"100vh"} direction={{ base: "column", md: "row" }}>
+        <Flex flex={13} overflowY="scroll" p={"40px"} maxH={700}>
           <Grid
             templateColumns={{
               base: "repeat(1, 1fr)",

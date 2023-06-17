@@ -93,7 +93,7 @@ function CreatePage() {
   }
   return (
     <>
-      <Stack minH={"80vh"} direction={{ base: "column", md: "row" }}>
+      <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
         <Flex p={8} flex={12} align={"center"} justify={"center"}>
           <Stack spacing={6} w={"full"} maxW={"lg"}>
             <Heading
